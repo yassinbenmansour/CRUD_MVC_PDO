@@ -8,10 +8,10 @@ class student_school
         }
 
         function getAll(){
-                $statement =  $this->cnx->prepare("select * from stagiaires");
+                $statement =  $this->cnx->prepare("select * from student");
                 $statement->execute();
                 $data=$statement->fetchAll();
-                 return $data;
+                return $data;
         }
 }
 
