@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,11 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css">
 
 </head>
+
 <body>
-        <h1>CRUD MVC PDO PROJECT</h1>
+
+        <?php echo "<h1>CRUD MVC PDO PROJECT</h1>" ?>
         <a href="./controller.php">Controller</a>
 </body>
+
 </html>
