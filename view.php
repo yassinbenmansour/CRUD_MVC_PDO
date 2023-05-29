@@ -12,8 +12,8 @@
 <body>
 
         <?php echo "<h1>CRUD MVC PDO PROJECT</h1>" ?>
-        <a href="./controllerA.php">Afficher les stagiaires</a>
-        <a href="./createstagiare.php">create stagiaire</a>
+        <a href="./controller/controllerA.php">Afficher les stagiaires</a>
+        <a href="./controller/createstagiare.php">create stagiaire</a>
 
 </body>
 
