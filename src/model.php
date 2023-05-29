@@ -21,7 +21,6 @@ class student_school
                 $statement->bindParam(2,$ln);
                 $statement->bindParam(3,$age);
                 $statement->execute();
-                return "<hr><p style='color:green'>User added</p><hr>";
         }
 }
 
