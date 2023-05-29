@@ -13,7 +13,7 @@
 <body>
 
         <?php echo "<h1>CRUD MVC PDO PROJECT</h1>" ?>
-        <a href="./controller.php">Controller</a>
+        <a href="./controllerA.php">Afficher les stagiaires</a>
 </body>
 
 </html>

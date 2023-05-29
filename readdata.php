@@ -10,6 +10,7 @@
 </head>
 <body>
 <h2>Liste des Stagiaires</h2>
+
 <table>
         <thead>
                 <tr>
@@ -17,6 +18,7 @@
                         <td>nom</td>
                         <td>prenom</td>
                         <td>age</td>
+                        <td>Action</td>
                 </tr>
         </thead>
         <tbody>
@@ -28,6 +30,10 @@
                         <td><?= $s['fn'] ?></td>
                         <td><?= $s['ln'] ?></td>
                         <td><?= $s['old'] ?></td>
+                        <td>
+                                <a href="delete.php">Delete</a>
+                                <a href="update.php">update</a>
+                        </td>
                 </tr>
                 <?php 
                         }
