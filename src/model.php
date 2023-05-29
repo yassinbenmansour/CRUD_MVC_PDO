@@ -13,6 +13,16 @@ class student_school
                 $data=$statement->fetchAll();
                 return $data;
         }
+
+
+        function create($fn,$ln,$age){
+                $statement = $this->cnx->prepare("insert into student (fn,ln,old) values (? ,? , ?)");
+                $statement->bindParam(1,$fn);
+                $statement->bindParam(2,$ln);
+                $statement->bindParam(3,$age);
+                $statement->execute();
+                return "<hr><p style='color:green'>User added</p><hr>";
+        }
 }
 
 ?>
