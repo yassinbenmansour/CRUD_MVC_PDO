@@ -18,7 +18,7 @@ class student_model
 
 public function getAllGroups()
 {
-    $statement =  $this->cnx->prepare("select groupe from groupes");
+    $statement =  $this->cnx->prepare("select * from groupes");
     $statement->execute();
     $data=$statement->fetchAll();
     return $data;
