@@ -1,15 +1,14 @@
 <?php
-function connexion()
+function cnx()
 {
-        $host = "localhost";
-        $user = "root";
-        $pass = "";
-        $db = "scool";
-
+        $host = 'localhost';
+        $dbname = 'scool';
+        $username = 'root';
+        $password = '';
         try {
-                $cn = new PDO("mysql:host=$host;db_name=$db", $user, $pass);
-                return $cn;
+                $connexion = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+                return $connexion;
         } catch (Exception $e) {
-                echo "Erreur" . $e->getMessage();
+                return null;
         }
 }

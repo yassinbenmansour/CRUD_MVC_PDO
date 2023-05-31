@@ -1,28 +1,27 @@
 <?php
-require "./db.php";
-
-class student
+require "db.php";
+class student_model
 {
-        private $cnx;
-        public function __construct()
-        {
-                $this->cnx = connexion();
-        }
+ private $cnx;
+ public function __construct()
+ {
+   $this->cnx= cnx();
+ }
 
-        public  function get_Student()
-        {
-                $statement = $this->cnx->prepare("SELECT * FROM student");
-                $statement->execute();
-                $data = $statement->fetchAll();
-                return $data;
-        }
-
-
-        public function get_Groupes()
-        {
-                $statement = $this->cnx->prepare("SELECT groupe FROM groupes");
-                $statement->execute();
-                $data = $statement->fetchAll();
-                return $data;
-        }
+ public function getAll()
+{
+    $statement =  $this->cnx->prepare("select * from student");
+    $statement->execute();
+    $data=$statement->fetchAll();
+    return $data;
 }
+
+public function getAllGroups()
+{
+    $statement =  $this->cnx->prepare("select groupe from groupes");
+    $statement->execute();
+    $data=$statement->fetchAll();
+    return $data;
+}
+}
+?>
