@@ -10,12 +10,12 @@
 </head>
 <body>
     <h2>Add Student</h2>
-    <form action="" method="post">
-        First name : <input type="text" name="cin" required/><br>
-        Last name : <input type="text" name="nom"/><br>
-        Old : <input type="text" name="moyenne"/><br>
+    <form action="./controller.php?cmd=create" method="post">
+        First name : <input type="text" name="fn" />
+        Last name : <input type="text" name="ln"/>
+        Old : <input type="text" name="old"/>
         Groupe : 
-        <select name="groupe">
+        <select name="grp">
         <?php
         foreach($groupes as $gr)
         {
@@ -24,6 +24,7 @@
         ?>
         </select>
         <br>
+        <input type="submit" value="enregistre" name="submit">
     </form>
 </body>
 </html>
