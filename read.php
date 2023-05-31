@@ -29,6 +29,8 @@
             ?>
         </tbody>
     </table>
+    <a href="./index.php">Accueil</a>
+
 </body>
 
 </html>

@@ -1,23 +1,44 @@
+
 <?php
-$cmd = $_REQUEST["cmd"];
-require "./model.php";
+$cmd=$_REQUEST["cmd"];
+require "model.php";
+$student_model=new student_model();
+if($cmd=="list")
+{
+    $students=$student_model->getAll();
+    require "read.php";
 
-$model_student = new student_model();
+}
 
-if ($cmd == "list") {
-        $students = $model_student->getAll();
-        require "./read.php";
+if($cmd=="cr")
+{
+    $groupes=$student_model->getAllGroups();
+    require "create.php";
+
 }
-elseif($cmd = "cr"){
-        $groupes = $model_student->getAllGroups();
-        require "./create.php";
+
+if($cmd=="create")
+{
+   if(isset($_POST['submit'])){
+        $c=$_POST["fn"];
+        $n=$_POST["ln"];
+        $m=$_POST["old"];
+        $g=$_POST["grp"];
+
+        $student_model->create($c,$n,$m,$g);
+        $students=$student_model->getAll();
+        require "read.php";
+   }
 }
-elseif($cmd = "create"){
-        $fn = $_POST['fn'];
-        $ln = $_POST['ln'];
-        $old = $_POST['old'];
-        $gr = $_POST['grp'];
-        $model_student->add_Student($fn,$ln,$old,$gr);
-        $model_student->getAll();
-        require "./read.php";
+
+if($cmd=="delete")
+{
+   $c=$_POST["id"];
+   $student_model->delete($c);
+   $students=$student_model->getAll();
+    require "read.php";
+
 }
+
+
+?>

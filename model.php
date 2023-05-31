@@ -18,22 +18,32 @@ class student_model
 
 public function getAllGroups()
 {
-    $statement =  $this->cnx->prepare("SELECT * FROM groupes");
+    $statement =  $this->cnx->prepare("select groupe from groupes");
     $statement->execute();
     $data=$statement->fetchAll();
     return $data;
 }
 
-public function add_Student($fn,$ln,$old,$gr){
-  $statement =  $this->cnx->prepare("INSERT into student (fn,ln,old,groupe) values (?,?,?,?)");
-  $statement->bindParam(1,$fn);
-  $statement->bindParam(2,$ln);
-  $statement->bindParam(3,$old);
-  $statement->bindParam(4,$gr);
+public function create($c,$n,$m,$g)
+{
+  $statement =  $this->cnx->prepare("INSERT into student values($c,$n,$m,$g)");
+  // $statement->bindParam(1,$c);
+  // $statement->bindParam(2,$n);
+  // $statement->bindParam(3,$m);
+  // $statement->bindParam(4,$g);
+  // $statement->execute([$c,$n,$m,$g]);
   $statement->execute();
+
+
 }
-public function add_Student_old($id){
-  $statement =  $this->cnx->prepare("DELETE * FROM student where id = '$id'");
-  $statement->execute();
+
+public function delete($c)
+{
+  $statement =  $this->cnx->prepare("DELETE from student where id = ?");
+  $statement->bindParam(1,$c);
+   $statement->execute();
+
 }
+
 }
+?>
