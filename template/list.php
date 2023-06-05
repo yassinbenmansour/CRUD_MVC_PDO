@@ -24,12 +24,12 @@
         </thead>
         <tbody>
             <?php
-            foreach ($students as $ligne)
-                echo "<tr><td>" . $ligne["fn"] . "</td><td>" . $ligne["ln"] . "</td><td>" . $ligne["old"] . "</td><td>" . $ligne["groupe"] . "</td></tr>";
+             foreach ($result as $ligne)
+                 echo "<tr><td>" . $ligne["fn"] . "</td><td>" . $ligne["ln"] . "</td><td>" . $ligne["old"] . "</td><td>" . $ligne["groupe"] . "</td></tr>";
             ?>
         </tbody>
     </table>
-    <a href="./index.php">Accueil</a>
+    <a href="../index.php">Accueil</a>
 
 </body>
 
