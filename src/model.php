@@ -1,6 +1,17 @@
 <?php
 require('../dbcnx.php');
-
-$statement = $cnx->prepare("select * from student");
-$statement->execute();
-$result = $statement->fetchAll();
+class model_student
+{
+        private $cnx;
+        public function __construct()
+        {
+                $this->cnx = cnx();
+        }
+        public function getAll()
+        {
+                $statement =  $this->cnx->prepare("select * from student");
+                $statement->execute();
+                $result = $statement->fetchAll();
+                return $result;
+        }
+}
