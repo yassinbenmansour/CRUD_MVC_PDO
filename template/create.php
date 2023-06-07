@@ -11,17 +11,14 @@
 </head>
 
 <body>
-        <?php
-        
 
-        ?>
         <h2>add student</h2>
 
-        <form action="" method="post">
+        <form action="../controller/controller.php?cmd=create" method="post">
                 First name : <input type="text" name="fn">
                 Last name : <input type="text" name="ln">
                 Old : <input type="number" name="old">
-                <select name="groupe">
+                <select name="grp">
                         <?php
                         foreach ($result as $grp) {
                         ?>
@@ -30,7 +27,7 @@
                         }
                         ?>
                 </select>
-                <input type="submit" value="add" name="add">
+                <input type="submit" value="add">
         </form>
 
 </body>

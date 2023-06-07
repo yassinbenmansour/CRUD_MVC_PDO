@@ -8,11 +8,22 @@ if ($cmd == "list") {
         $result = $model_st->getAll();
         require("../template/list.php");
 }
-if($cmd == "create"){
+if($cmd == "std_create"){
         $result = $model_st->getAllGroups();
         require("../template/create.php");
 }
 
+if($cmd == "create"){
+         $c=$_REQUEST["fn"];
+         $n=$_REQUEST["ln"];
+         $m=$_REQUEST["old"];
+         $g=$_REQUEST["grp"];
+         
+         $model_st->create($c,$n,$m,$g);
+
+        $result = $model_st->getAll();
+        require("../template/list.php");
+}
 if ($cmd == "delete") {
         $c = $_REQUEST["id"];
         $model_st->delete($c);

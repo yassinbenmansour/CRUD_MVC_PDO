@@ -23,6 +23,16 @@ class model_student
                 return $result;
         }
 
+        public function create($c, $n, $m, $g)
+        {
+                $statement = $this->cnx->prepare("INSERT INTO student (fn, ln, old, groupe) VALUES (:c, :n, :m, :g)");
+                $statement->bindParam(':c', $c);
+                $statement->bindParam(':n', $n);
+                $statement->bindParam(':m', $m);
+                $statement->bindParam(':g', $g);
+                $statement->execute();
+        }
+
         public function delete($id)
         {
                 $statement = $this->cnx->prepare("DELETE from student where id = ?");
@@ -32,7 +42,7 @@ class model_student
 
         public function update($id, $fn, $ln, $old, $groupe)
         {
-                $statement = $this->cnx->prepare("UPDATE into student SET fn = '?', ln = '?' , old = '?' ,groupe = '?' WHERE  id = ?");
+                $statement = $this->cnx->prepare("UPDATE student SET fn = ?, ln = ?, old = ?, groupe = ? WHERE id = ?");
                 $statement->bindParam(1, $fn);
                 $statement->bindParam(2, $ln);
                 $statement->bindParam(3, $old);
