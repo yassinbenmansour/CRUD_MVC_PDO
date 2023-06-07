@@ -12,8 +12,8 @@
 
 <body>
     <h1> CRUD PDO MVC</h1>
-    <a href="controller/controller.php">list student</a>
-    <a href="controller.php">add new student</a>
+    <a href="controller/controller.php?cmd=list">list student</a>
+    <a href="controller.php?cmd=add">add new student</a>
 </body>
 
 </html>

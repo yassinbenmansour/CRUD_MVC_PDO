@@ -14,4 +14,11 @@ class model_student
                 $result = $statement->fetchAll();
                 return $result;
         }
+
+        public function delete($id){
+                $statement = $this->cnx->prepare("DELETE from student where id = ?");
+                $statement->bindParam(1,$id);
+                $statement->execute();
+        }
+        
 }

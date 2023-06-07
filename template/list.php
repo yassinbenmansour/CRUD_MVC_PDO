@@ -19,13 +19,14 @@
                 <td>Last name</td>
                 <td>Old</td>
                 <td>Groupe</td>
+                <td>Action</td>
 
             </tr>
         </thead>
         <tbody>
             <?php
              foreach ($result as $ligne)
-                 echo "<tr><td>" . $ligne["fn"] . "</td><td>" . $ligne["ln"] . "</td><td>" . $ligne["old"] . "</td><td>" . $ligne["groupe"] . "</td></tr>";
+                 echo "<tr><td>" . $ligne["fn"] . "</td><td>" . $ligne["ln"] . "</td><td>" . $ligne["old"] . "</td><td>" . $ligne["groupe"] ."</td><td><a href='controller.php?cmd=delete&id=".$ligne["id"]."'>supprimer</a></td></tr>";
             ?>
         </tbody>
     </table>
