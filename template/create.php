@@ -11,6 +11,10 @@
 </head>
 
 <body>
+        <?php
+        
+
+        ?>
         <h2>add student</h2>
 
         <form action="" method="post">
@@ -18,9 +22,15 @@
                 Last name : <input type="text" name="ln">
                 Old : <input type="number" name="old">
                 <select name="groupe">
-                        <option value="DEV109">DEV109</option>
-                        <option value="DEV108">DEV108</option>
+                        <?php
+                        foreach ($result as $grp) {
+                        ?>
+                                <option value="<?php echo $grp['groupe']?>"><?php echo $grp['groupe']?></option>
+                        <?php
+                        }
+                        ?>
                 </select>
+                <input type="submit" value="add" name="add">
         </form>
 
 </body>

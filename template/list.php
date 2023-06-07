@@ -26,7 +26,8 @@
         <tbody>
             <?php
              foreach ($result as $ligne)
-                 echo "<tr><td>" . $ligne["fn"] . "</td><td>" . $ligne["ln"] . "</td><td>" . $ligne["old"] . "</td><td>" . $ligne["groupe"] ."</td><td><a href='controller.php?cmd=delete&id=".$ligne["id"]."'>supprimer</a></td></tr>";
+                 echo "<tr><td>" . $ligne["fn"] . "</td><td>" . $ligne["ln"] . "</td><td>" . $ligne["old"] . "</td><td>" . $ligne["groupe"] .
+                 "</td><td><a href='controller.php?cmd=delete&id=".$ligne["id"]."'>supprimer </a><a href='controller.php?cmd=update&id=".$ligne["id"]."'> update</a></td></tr>";
             ?>
         </tbody>
     </table>

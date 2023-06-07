@@ -13,7 +13,7 @@
 <body>
     <h1> CRUD PDO MVC</h1>
     <a href="controller/controller.php?cmd=list">list student</a>
-    <a href="controller.php?cmd=add">add new student</a>
+    <a href="template/controller.php?cmd=create">add new student</a>
 </body>
 
 </html>
