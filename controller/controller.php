@@ -30,3 +30,22 @@ if ($cmd == "delete") {
         $result = $model_st->getAll();
         require("../template/list.php");
 }
+
+if($cmd == "std_update"){
+        $id = $_GET['id'];
+        $result = $model_st->getdata($id);
+        $rGrp = $model_st->getAllGroups();
+        require('../template/update.php');
+
+}
+if($cmd == "update"){
+        $c=$_REQUEST["fn"];
+        $n=$_REQUEST["ln"];
+        $m=$_REQUEST["old"];
+        $g=$_REQUEST["grp"];
+        $id = $_REQUEST["id"];
+        $model_st->update($id,$c,$n,$m,$g);
+
+        $result = $model_st->getAll();
+        require("../template/list.php");
+}

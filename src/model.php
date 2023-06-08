@@ -23,6 +23,15 @@ class model_student
                 return $result;
         }
 
+        public function getdata($id)
+        {
+                $statement = $this->cnx->prepare("SELECT * FROM student WHERE id = ?");
+                $statement->bindParam(1, $id);
+                $statement->execute();
+                $result = $statement->fetchAll();
+                return $result;
+        }
+
         public function create($c, $n, $m, $g)
         {
                 $statement = $this->cnx->prepare("INSERT INTO student (fn, ln, old, groupe) VALUES (:c, :n, :m, :g)");
