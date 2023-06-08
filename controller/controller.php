@@ -39,13 +39,13 @@ if($cmd == "std_update"){
 
 }
 if($cmd == "update"){
-        $c=$_REQUEST["fn"];
-        $n=$_REQUEST["ln"];
-        $m=$_REQUEST["old"];
-        $g=$_REQUEST["grp"];
+        $fn=$_REQUEST["fn"];
+        $ln=$_REQUEST["ln"];
+        $old=$_REQUEST["old"];
+        $grp=$_REQUEST["grp"];
         $id = $_REQUEST["id"];
-        $model_st->update($id,$c,$n,$m,$g);
-
+        
+        $model_st->update($id, $fn, $ln, $old, $grp);
         $result = $model_st->getAll();
         require("../template/list.php");
 }

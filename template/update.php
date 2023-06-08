@@ -17,7 +17,7 @@
         <?php
                         foreach ($result as $grp) {
                         ?>
-                Id : <input type="text" disabled name="fn" value="<?php echo $grp['id'] ?>">
+                Id : <input type="text" disabled name="id" value="<?php echo $grp['id'] ?>">
                 First name : <input type="text" name="fn" value="<?php echo $grp['fn'] ?>">
                 Last name : <input type="text" name="ln" value="<?php echo $grp['ln'] ?>">
                 Old : <input type="number" name="old" value="<?php echo $grp['old'] ?>">

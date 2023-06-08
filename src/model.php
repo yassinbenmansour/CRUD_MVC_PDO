@@ -49,14 +49,14 @@ class model_student
                 $statement->execute();
         }
 
-        public function update($id, $fn, $ln, $old, $groupe)
+        public function update($id, $fn, $ln, $old, $grp)
         {
-                $statement = $this->cnx->prepare("UPDATE student SET fn = ?, ln = ?, old = ?, groupe = ? WHERE id = ?");
-                $statement->bindParam(1, $fn);
-                $statement->bindParam(2, $ln);
-                $statement->bindParam(3, $old);
-                $statement->bindParam(4, $groupe);
-                $statement->bindParam(5, $id);
+                $statement = $this->cnx->prepare("UPDATE student SET fn = :fn , ln = :ln , old = :old , groupe = :grp WHERE id = :id");
+                $statement->bindParam(':fn', $fn);
+                $statement->bindParam(':ln', $ln);
+                $statement->bindParam(':old', $old);
+                $statement->bindParam(':grp', $grp);
+                $statement->bindParam(':id', $id);
                 $statement->execute();
         }
 }
